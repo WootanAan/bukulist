@@ -38,4 +38,5 @@ Tambah Buku
 		@endforeach
 	</tbody>
 </table>
+{{ $books->links('vendor.pagination.bootstrap-4')}}
 @endsection

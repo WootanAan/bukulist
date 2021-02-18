@@ -25,7 +25,7 @@ class TamuController extends Controller
     		->where('nama', 'like', $cari)
     		->orWhere('sinopsis', 'like', $cari)
     		->orWhere('deskripsi', 'like', $cari)
-    		->get();
+    		->paginate(20);
     	$cek = $books->count();
     	if ($cek < 1) {
     		return redirect('/')->with('error_message', 'Tidak ditemukan data yang mirip.');
@@ -59,7 +59,7 @@ class TamuController extends Controller
     {
         $books = DB::table('books')
             ->orderBy('id', 'asc')
-            ->get();
+            ->paginate(20);
         $data = [
             'books' => $books,
             'categories' => DB::table('categories')->orderBy('nama')->get()];
@@ -105,7 +105,7 @@ class TamuController extends Controller
 
     public function penulis()
     {
-        $authors = DB::table('authors')->orderBy('nama', 'desc')->get();
+        $authors = DB::table('authors')->orderBy('nama', 'desc')->paginate(100);
 
         $data = [
             'authors' => $authors,

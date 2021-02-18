@@ -14,4 +14,5 @@ Daftar Penulis
 	<a href="{{url('/penulis/'.$author->id)}}" class="list-group-item text-body">{{$author->nama}}</a>
 	@endforeach
 </ul>
+{{ $authors->links('vendor.pagination.bootstrap-4')}}
 @endsection

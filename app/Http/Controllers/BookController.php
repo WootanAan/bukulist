@@ -20,7 +20,7 @@ class BookController extends Controller
      */
     public function index()
     {
-        $books = DB::table('books')->orderBy('id', 'desc')->get();
+        $books = DB::table('books')->orderBy('id', 'desc')->paginate(20);
 
         $data = [
             'books' => $books];

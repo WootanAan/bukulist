@@ -19,4 +19,5 @@ Hasil pencarian
 	</a>
 @endforeach
 </div>
+{{ $books->links('vendor.pagination.bootstrap-4')}}
 @endsection
