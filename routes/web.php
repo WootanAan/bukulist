@@ -36,7 +36,7 @@ Route::middleware('auth')->group(function() {
 });
 
 
-// user page
+// tamu page
 Route::get('/', [TamuController::class, 'index']);
 Route::post('/cari', [TamuController::class, 'cari']);
 Route::get('/detail/{id}', [TamuController::class, 'detail']);
@@ -46,6 +46,7 @@ Route::get('/tahun', [TamuController::class, 'tahun']);
 Route::get('/tahun/{id}', [TamuController::class, 'tahunDetail']);
 Route::get('/penulis', [TamuController::class, 'penulis']);
 Route::get('/penulis/{id}', [TamuController::class, 'penulisDetail']);
+Route::get('/populer', [TamuController::class, 'populer']);
 
 // login page
 Route::middleware('guest')->group(function() {

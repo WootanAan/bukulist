@@ -42,6 +42,9 @@
 					<li class="nav-item">
 						<a class="nav-link @yield('isActiveTerbaru')" aria-current="page" href="{{ url('/terbaru')}}">Terbaru</a>
 					</li>
+					<li class="nav-item">
+						<a class="nav-link @yield('isActivePopuler')" aria-current="page" href="{{ url('/populer')}}">Populer</a>
+					</li>
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle @yield('isActiveKategori')" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							Kategori

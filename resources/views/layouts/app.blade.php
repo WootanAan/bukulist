@@ -60,7 +60,7 @@
 					<li>
 						<form method="post" action="/logout">
 							@csrf
-							<button type="submit">Logout</button>
+							<a href="{{url('/login')}}" class="text-light" style="text-decoration: none;">Logout</a>
 						</form>
 					</li>
 				</ul>

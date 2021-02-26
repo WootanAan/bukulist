@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
         	CreateCategorySeeder::class,
         	CreateLemarySeeder::class,
         	CreatePenerbitSeeder::class,
-        	CreateTahunSeeder::class,]);
+        	CreateTahunSeeder::class,
+            UserSeeder::class,
+        ]);
     }
 }

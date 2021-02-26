@@ -44,6 +44,9 @@ class TamuController extends Controller
         $category = DB::table('categories')->where('id', '=', $book->category_id)->first();
         $lemary = DB::table('lemaries')->where('id', '=', $book->lemary_id)->first();
         $penerbit = DB::table('penerbits')->where('id', '=', $book->penerbit_id)->first();
+
+        DB::table('books')->where('id', $id)->update(['populer' => $book->populer + 1]);
+
     	$data = [
     		'book' => $book,
             'author' => $author,
@@ -58,7 +61,7 @@ class TamuController extends Controller
     public function terbaru()
     {
         $books = DB::table('books')
-            ->orderBy('id', 'asc')
+            ->orderBy('id', 'desc')
             ->paginate(20);
         $data = [
             'books' => $books,
@@ -125,5 +128,16 @@ class TamuController extends Controller
         ];
 
         return view('tamu.authorDetail', $data);
+    }
+
+    public function populer()
+    {
+        $books = DB::table('books')
+            ->orderBy('populer', 'desc')
+            ->paginate(20);
+        $data = [
+            'books' => $books,
+            'categories' => DB::table('categories')->orderBy('nama')->get()];
+        return view('tamu.populer', $data);
     }
 }

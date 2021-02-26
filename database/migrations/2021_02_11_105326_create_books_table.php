@@ -27,6 +27,7 @@ class CreateBooksTable extends Migration
             $table->integer('jumlah_buku');
             $table->boolean('status');
             $table->string('gambar')->nullable();
+            $table->integer('populer')->default(0);
             $table->timestamps();
         });
     }
